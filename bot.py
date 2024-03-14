@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 DATA_FILENAME = "data.csv"
 
-TOKEN = "7124461056:AAHdGmJSssPFwiYiyoGvej7G7toQT8exSxs"
+TOKEN = ""
 bot = telebot.TeleBot(TOKEN)
 
 rub = None
@@ -79,7 +79,7 @@ def timer(current_date):
                 total_balance_rub += int(line["Total_Balance_Bank"]) + int(line["CC"]) + int(line["Aifory"]) + int(line["PayScrow"]) - int(line["Losses"])
                 total_balance_us += int(line["ByBit_USDT"]) + int(line["Exnode_USDT"])
         
-        return f'RUB: {total_balance_rub} USDT: {total_balance_us}'
+        return f'RUB: {total_balance_rub}, USDT: {total_balance_us}'
 
 def writing(time):
     date, time = str(time).split()
